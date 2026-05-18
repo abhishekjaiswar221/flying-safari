@@ -4,6 +4,12 @@ import Hero from "@/components/Hero";
 import ItineraryCard from "@/components/ItineraryCard";
 import Footer from "@/components/navigation/Footer";
 import NavBar from "@/components/navigation/NavBar";
+import {
+  IconDiscount2,
+  IconMap2,
+  IconPlaneDeparture,
+  IconUser,
+} from "@tabler/icons-react";
 
 const HomePage = () => {
   const cardData = [
@@ -60,6 +66,33 @@ const HomePage = () => {
       imgSrc: "/images/group-elephants.jpg",
       imgText: "LAKE MANYARA NATIONAL PARK",
       featured: false,
+    },
+  ];
+
+  const features = [
+    {
+      icon: IconPlaneDeparture,
+      title: "Seamless Journeys",
+      description:
+        "Effortlessly combine flight bookings with inspiring safari itineraries.",
+    },
+    {
+      icon: IconUser,
+      title: "Travel Experts",
+      description:
+        "Rely on local knowledge and partners for safe, memorable safaris.",
+    },
+    {
+      icon: IconDiscount2,
+      title: "Smart Fares",
+      description:
+        "Enjoy exclusive savings and special offers on Tanzania flight bookings.",
+    },
+    {
+      icon: IconMap2,
+      title: "Curated Itineraries",
+      description:
+        "Hand-picked safari routes showcasing Tanzania’s most iconic destinations.",
     },
   ];
 
@@ -165,6 +198,32 @@ const HomePage = () => {
           <div className="mt-8 flex items-center justify-center gap-10 lg:hidden">
             <img src="/images/left-button.png" alt="" />
             <img src="/images/right-button.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden">
+        <div className="bg-[url('/images/about-bg.jpg')]">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 py-20 md:grid-cols-2 xl:grid-cols-4">
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+
+              return (
+                <div key={index} className="text-center">
+                  <div className="mb-6 flex justify-center">
+                    <Icon size={68} stroke={1.5} className="text-[#d6a24a]" />
+                  </div>
+
+                  <h3 className="mb-4 text-3xl font-medium text-[#2f2b27]">
+                    {feature.title}
+                  </h3>
+
+                  <p className="mx-auto max-w-[260px] text-[17px] leading-8 text-[#5e5a55]">
+                    {feature.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
