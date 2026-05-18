@@ -1,6 +1,7 @@
 import DestinationCard from "@/components/DestinationCard";
 import FlightSearchCard from "@/components/FlightSearchCard";
 import Hero from "@/components/Hero";
+import ItineraryCard from "@/components/ItineraryCard";
 import NavBar from "@/components/navigation/NavBar";
 
 const HomePage = () => {
@@ -135,6 +136,36 @@ const HomePage = () => {
           <button className="box-content rounded-sm bg-[var(--primary-color)] px-5 py-1.5 text-white">
             About Us
           </button>
+        </div>
+      </section>
+
+      <section className="bg-[url('/images/popular-bg.jpg')] bg-cover bg-center py-16">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="lg:flex lg:items-end lg:justify-between">
+            <div className="space-y-3 text-left">
+              <h4 className="text-[#D9A551]">POPULAR ITINERARIES</h4>
+
+              <h1 className="max-w-2xl text-3xl text-white md:text-5xl">
+                Safari Itineraries Curated just for you
+              </h1>
+            </div>
+            <div className="mt-8 hidden items-center justify-center gap-10 lg:flex">
+              <img src="/images/left-button.png" alt="" />
+              <img src="/images/right-button.png" alt="" />
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <ItineraryCard />
+            <ItineraryCard className={"hidden md:block"} />
+            <ItineraryCard className={"hidden lg:block"} />
+            <ItineraryCard className={"hidden xl:block"} />
+          </div>
+
+          <div className="mt-8 flex items-center justify-center gap-10 lg:hidden">
+            <img src="/images/left-button.png" alt="" />
+            <img src="/images/right-button.png" alt="" />
+          </div>
         </div>
       </section>
     </div>
