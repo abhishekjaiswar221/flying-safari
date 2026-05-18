@@ -2,6 +2,7 @@ import DestinationCard from "@/components/DestinationCard";
 import FlightSearchCard from "@/components/FlightSearchCard";
 import Hero from "@/components/Hero";
 import ItineraryCard from "@/components/ItineraryCard";
+import Footer from "@/components/navigation/Footer";
 import NavBar from "@/components/navigation/NavBar";
 
 const HomePage = () => {
@@ -159,7 +160,6 @@ const HomePage = () => {
             <ItineraryCard />
             <ItineraryCard className={"hidden md:block"} />
             <ItineraryCard className={"hidden lg:block"} />
-            <ItineraryCard className={"hidden xl:block"} />
           </div>
 
           <div className="mt-8 flex items-center justify-center gap-10 lg:hidden">
@@ -168,6 +168,8 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
