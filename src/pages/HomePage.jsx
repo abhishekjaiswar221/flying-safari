@@ -104,7 +104,7 @@ const HomePage = () => {
 
       <Hero />
 
-      <div className="-mt-10 px-4 md:px-6">
+      <div className="-mt-24 md:-mt-28">
         <FlightSearchCard />
       </div>
 

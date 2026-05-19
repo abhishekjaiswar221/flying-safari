@@ -10,106 +10,124 @@ import {
 
 const FlightSearchCard = () => {
   return (
-    <div className="w-full max-w-7xl rounded-2xl bg-[#f5f5f5] shadow-lg">
-      <div className="flex overflow-hidden">
-        <div className="flex items-center gap-2 bg-[#ececec] px-6 py-4">
-          <IconPlaneDeparture size={22} />
-          <p className="hidden font-semibold md:block">Book Flights</p>
-        </div>
+    <section className="relative z-20 mx-auto w-full max-w-[1280px] px-4">
+      <div className="overflow-hidden rounded-xl bg-[#f5f5f3] shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+        <div className="flex">
+          <button className="flex h-[58px] items-center gap-2 border-r border-[#dddddd] bg-[#ececea] px-5 text-[#414535]">
+            <IconPlaneDeparture size={20} stroke={1.7} />
 
-        <div className="flex items-center gap-2 bg-[#ececec] px-6 py-4">
-          <IconClipboardText size={22} />
-          <p className="hidden font-semibold md:block">Find Reservation</p>
-        </div>
-
-        <div className="flex items-center gap-2 bg-[#ececec] px-6 py-4">
-          <IconNotes size={22} />
-          <p className="hidden font-semibold md:block">Check-In</p>
-        </div>
-      </div>
-
-      <div className="space-y-8 p-5">
-        <div className="flex w-fit">
-          <button className="bg-[var(--primary-color)] px-5 py-3 text-white">
-            Round Trip
+            <span className="hidden text-sm font-semibold md:block">
+              Book Flights
+            </span>
           </button>
 
-          <button className="bg-[#e9e9e9] px-5 py-3 text-black">One way</button>
+          <button className="flex h-[58px] items-center gap-2 border-r border-[#dddddd] bg-[#ececea] px-5 text-[#414535]">
+            <IconClipboardText size={20} stroke={1.7} />
+
+            <span className="hidden text-sm font-semibold md:block">
+              Find Reservation
+            </span>
+          </button>
+
+          <button className="flex h-[58px] items-center gap-2 bg-[#ececea] px-5 text-[#414535]">
+            <IconNotes size={20} stroke={1.7} />
+
+            <span className="hidden text-sm font-semibold md:block">
+              Check-In
+            </span>
+          </button>
         </div>
 
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
-          <div className="relative flex-1">
-            <input
-              type="text"
-              placeholder="FROM"
-              className="w-full rounded bg-[#ececec] px-4 py-4 outline-none"
-            />
+        <div className="p-4 md:p-6">
+          <div className="flex w-fit overflow-hidden">
+            <button className="bg-[#4d573c] px-5 py-3 text-[15px] text-white">
+              Round Trip
+            </button>
 
-            <div className="absolute top-1/2 -right-3 hidden h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow md:flex">
-              <IconArrowsExchange size={18} />
+            <button className="bg-[#ebebeb] px-5 py-3 text-[15px] text-[#2f2f2f]">
+              One way
+            </button>
+          </div>
+
+          <div className="mt-6 flex flex-col gap-3 xl:flex-row xl:items-center">
+            <div className="relative grid flex-1 grid-cols-1 gap-3 md:grid-cols-2">
+              <input
+                type="text"
+                placeholder="FROM"
+                className="h-[54px] rounded-md bg-[#ececea] px-4 text-sm tracking-wide text-[#555] outline-none placeholder:text-[#8f8f8f]"
+              />
+
+              <input
+                type="text"
+                placeholder="TO"
+                className="h-[54px] rounded-md bg-[#ececea] px-4 text-sm tracking-wide text-[#555] outline-none placeholder:text-[#8f8f8f]"
+              />
+
+              <div className="absolute top-1/2 left-1/2 z-10 hidden h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-md md:flex">
+                <IconArrowsExchange size={18} className="text-[#5c5c5c]" />
+              </div>
+            </div>
+
+            <div className="grid flex-1 grid-cols-1 gap-3 md:grid-cols-3">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="DEPART DATE"
+                  className="h-[54px] w-full rounded-md bg-[#ececea] px-4 text-sm tracking-wide text-[#555] outline-none placeholder:text-[#8f8f8f]"
+                />
+
+                <IconCalendar
+                  size={18}
+                  className="absolute top-1/2 right-4 -translate-y-1/2 text-[#666]"
+                />
+              </div>
+
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="RETURN DATE"
+                  className="h-[54px] w-full rounded-md bg-[#ececea] px-4 text-sm tracking-wide text-[#555] outline-none placeholder:text-[#8f8f8f]"
+                />
+
+                <IconCalendar
+                  size={18}
+                  className="absolute top-1/2 right-4 -translate-y-1/2 text-[#666]"
+                />
+              </div>
+
+              <div className="relative">
+                <label className="absolute top-2 left-4 text-[11px] tracking-wide text-[#666]">
+                  PASSENGER
+                </label>
+
+                <select className="h-[54px] w-full appearance-none rounded-md bg-[#ececea] px-4 pt-5 text-sm text-[#555] outline-none">
+                  <option>1 Passenger</option>
+                </select>
+
+                <IconChevronDown
+                  size={18}
+                  className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-[#555]"
+                />
+              </div>
             </div>
           </div>
 
-          <div className="flex-1">
-            <input
-              type="text"
-              placeholder="TO"
-              className="w-full rounded bg-[#ececec] px-4 py-4 outline-none"
-            />
+          <div className="mt-6 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <p className="flex items-center text-sm text-[#6f6f6f]">
+              <IconTicket
+                size={18}
+                className="mr-2 -rotate-12 text-[#5f674d]"
+              />
+              Have a coupon code? Enter it here
+            </p>
+
+            <button className="h-[50px] w-full rounded-md bg-[#4d573c] px-8 text-sm font-semibold tracking-wide text-white transition hover:opacity-90 md:w-fit">
+              Search flights
+            </button>
           </div>
-
-          <div className="relative flex-1">
-            <input
-              type="text"
-              placeholder="DEPART DATE"
-              className="w-full rounded bg-[#ececec] px-4 py-4 outline-none"
-            />
-
-            <IconCalendar
-              size={18}
-              className="absolute top-1/2 right-4 -translate-y-1/2"
-            />
-          </div>
-
-          <div className="relative flex-1">
-            <input
-              type="text"
-              placeholder="RETURN DATE"
-              className="w-full rounded bg-[#ececec] px-4 py-4 outline-none"
-            />
-
-            <IconCalendar
-              size={18}
-              className="absolute top-1/2 right-4 -translate-y-1/2"
-            />
-          </div>
-
-          <div className="relative flex-1">
-            <label className="absolute top-2 left-4 text-xs">PASSENGER</label>
-
-            <select className="w-full appearance-none rounded bg-[#ececec] px-4 pt-7 pb-2 text-gray-600 outline-none">
-              <option>1 Passenger</option>
-            </select>
-
-            <IconChevronDown
-              size={18}
-              className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2"
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <p className="text-gray-600">
-            <IconTicket className="mr-2 inline -rotate-12" />
-            Have a coupon code? Enter it here
-          </p>
-
-          <button className="w-fit rounded-md bg-[var(--primary-color)] px-8 py-3 text-white">
-            Search flights
-          </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
